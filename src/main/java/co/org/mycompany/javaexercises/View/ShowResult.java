@@ -15,28 +15,32 @@ import src.main.java.co.org.mycompany.javaexercises.Model.Inheritance.SoccerPlay
 
 public class ShowResult {
 
-    Scanner sc = new Scanner(System.in);
-    Text textClass = new Text();
-    Number numberClass = new Number();
+    Scanner sc;
+    Text textClass;
+    Number numberClass;
     Programmer programmerClass;
-    SoccerPlayer soccerPlayerClass = new SoccerPlayer();
+    SoccerPlayer soccerPlayerClass;
 
     // Text class.
     /**
      * 
      * @param text
      */
-    public void showFindCharNoRepeated(String text) {
+    public void showFindCharNoRepeated() {
+        sc = new Scanner(System.in); textClass = new Text();
+        System.out.print("Enter a text: "); String text = sc.nextLine();
         System.out.println("Non-repeating character: " + textClass.findCharNoRepeated(text));
     }
 
     public void showCountVowels() {
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Enter a text: ");
         String text = sc.nextLine();
         System.out.println("There are " + textClass.countVowels(text) + " vowels in the text.");
     }
 
     public void showReplaceLetter() {
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Enter a text: ");
         String text = sc.nextLine();
         System.out.print("Enter the letter to replace: ");
@@ -49,12 +53,14 @@ public class ShowResult {
     }
 
     public void showReplaceToASCII() {
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Enter a text: ");
         String text = sc.nextLine();
         System.out.println("Each letter of the text converted to ASCII code:" + textClass.replaceToASCII(text));
     }
 
     public void showReversePolishCalculator() {
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Reverse Polish Calculator.\nOperations:"
                 + "\nSum (+) => a+b"
                 + "\nSubtraction (-) => a-b"
@@ -74,12 +80,14 @@ public class ShowResult {
     }
 
     public void showRemoveSpaces() {
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Enter a text: ");
         String text = sc.nextLine();
         System.out.println("Text without spaces: " + textClass.removeSpaces(text));
     }
 
     public void showCheckIfPhraseIsVoid() {
+        textClass = new Text();
         String phrase = "", superPhrase = "";
         do {
             phrase = JOptionPane.showInputDialog(null, "Enter a phrase: ");
@@ -89,6 +97,7 @@ public class ShowResult {
     }
 
     public void showChangeLowerOrUpperPhrase() {
+        textClass = new Text();
         String phrase = JOptionPane.showInputDialog(null, "Enter the phrase: ");
         byte option = Byte.parseByte(JOptionPane.showInputDialog(null,
                 "Phrase Formater.\nEnter the number that corresponding:\n1. Lowercase\n2. Uppercase."));
@@ -96,6 +105,7 @@ public class ShowResult {
     }
 
     public void showEqualizeTwoWords(){
+        sc = new Scanner(System.in); textClass = new Text();
         String wordOne, wordTwo;
         System.out.print("Enter the first word: "); wordOne = sc.next();
         System.out.print("Enter the second word: "); wordTwo = sc.next();
@@ -103,24 +113,34 @@ public class ShowResult {
     }
 
     public void showCheckSchedule(){
+        sc = new Scanner(System.in); textClass = new Text();
         System.out.print("Enter the day: "); String day = sc.nextLine();
         System.out.println(day.toUpperCase()+" => "+textClass.checkSchedule(day));
     }
 
+    public void showCheckIfItsPalindrome(){
+        sc = new Scanner(System.in); textClass = new Text();
+        System.out.print("Enter a text: "); String text = sc.nextLine();
+        System.out.println(textClass.checkIfItsPalindrome(text) == true ? "It's a palindorme." : "It's not a palindrome.");
+    }
+
     // Number class.
     public void showIsPrime() {
+        sc = new Scanner(System.in); numberClass = new Number();
         System.out.print("Enter a number: ");
         int number = Integer.parseInt(sc.nextLine());
         System.out.println(numberClass.checkIsPrime(number) == true ? "It's prime." : "It's not prime");
     }
 
     public void showGeneratePrimes() {
+        sc = new Scanner(System.in); numberClass = new Number();
         System.out.print("Enter a length: ");
         int length = Integer.parseInt(sc.nextLine());
         System.out.println(numberClass.generatePrimes(length));
     }
 
     public void showCountUntilMinusOneEntered() {
+        sc = new Scanner(System.in); numberClass = new Number();
         int counter = 0;
         double number;
         do {
@@ -138,6 +158,7 @@ public class ShowResult {
         System.out.println(programmerClass.introduceOneself());
 
         //SoccerPlayer class.
+        soccerPlayerClass = new SoccerPlayer();
         soccerPlayerClass.setFullName("César Rodríguez");
         soccerPlayerClass.setAge((byte)22);
         soccerPlayerClass.setTeam("Juventus");

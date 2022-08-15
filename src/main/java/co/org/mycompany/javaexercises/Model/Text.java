@@ -120,4 +120,17 @@ public class Text {
         }
         return message;
     }
+
+    /**
+     * 
+     * @param text
+     * @return True or False depending on the case.
+     */
+    public boolean checkIfItsPalindrome(String text){
+        String newText = "";
+        for(String character: text.split("")){
+            newText = character+newText;
+        }
+        return newText.equalsIgnoreCase(text) ? true : false; 
+    }
 }

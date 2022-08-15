@@ -29,7 +29,7 @@ public class Text {
         String[] vowels = "aeiou".split("");
         for(String leText: text.split("")){
             for(String leVowels: vowels){
-                if(leText.equals(leVowels)) count += 1;
+                if(leText.equalsIgnoreCase(leVowels)) count += 1;
             }
         }
         return count;
@@ -45,7 +45,7 @@ public class Text {
     public String replaceLetter(String text, String letter, String replacement){
         String newText = "";
         for(String letText: text.split("")){
-            newText += letText.equals(letter) ? replacement : letText;
+            newText += letText.equalsIgnoreCase(letter) ? replacement : letText;
         }
         return newText;
     }
@@ -70,5 +70,54 @@ public class Text {
      */
     public String removeSpaces(String text){
         return text.replaceAll(" ", "");
+    }
+
+    /**
+     * 
+     * @param phrase
+     * @return
+     */
+    public boolean checkIfPhraseIsVoid(String phrase){
+        boolean isVoid = phrase.length() == 0 ? false : true;
+        if(isVoid == true){
+            String ABC = "abcdefghijklmnñopqrstuvwxyz";
+            for(String character: phrase.split("")){
+                if (ABC.contains(character.toLowerCase()) == true) return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 
+     * @param option
+     * @param phrase
+     * @return Phrase format changed.
+     */
+    public String changeLowerOrUpperPhrase(byte option, String phrase){
+        return option == 1 ? phrase.toLowerCase() : phrase.toUpperCase();
+    }
+
+    /**
+     * 
+     * @param wordOne
+     * @param wordTwo
+     * @return True or False depending on the case.
+     */
+    public boolean equalizeTwoWords(String wordOne, String wordTwo){
+        return wordOne.equalsIgnoreCase(wordTwo) ? true : false;
+    }
+
+    /**
+     * 
+     * @param day
+     * @return Day that corresponding.
+     */
+    public String checkSchedule(String day){
+        String message = "It does not exist.";
+        for(Schedule scheduleDay: Schedule.values()){
+            message = scheduleDay.getDay().equalsIgnoreCase(day) ? scheduleDay.getInfo() : message;
+        }
+        return message;
     }
 }

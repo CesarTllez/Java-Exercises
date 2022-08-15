@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 
 import src.main.java.co.org.mycompany.javaexercises.Model.Text;
 import src.main.java.co.org.mycompany.javaexercises.Model.Number;
+import src.main.java.co.org.mycompany.javaexercises.Model.Inheritance.Programmer;
+import src.main.java.co.org.mycompany.javaexercises.Model.Inheritance.SoccerPlayer;
 
 /**
  * @author César Rodríguez
@@ -16,6 +18,8 @@ public class ShowResult {
     Scanner sc = new Scanner(System.in);
     Text textClass = new Text();
     Number numberClass = new Number();
+    Programmer programmerClass;
+    SoccerPlayer soccerPlayerClass = new SoccerPlayer();
 
     // Text class.
     /**
@@ -125,5 +129,18 @@ public class ShowResult {
             counter += 1;
         } while (number != (-1));
         System.out.println("Number of numbers entered: " + counter);
+    }
+
+    //Inheritance
+    public void showIntroduceOneself(){
+        //Programmer class.
+        programmerClass = new Programmer("César Rodríguez", (byte)22, 000000000, "Java");
+        System.out.println(programmerClass.introduceOneself());
+
+        //SoccerPlayer class.
+        soccerPlayerClass.setFullName("César Rodríguez");
+        soccerPlayerClass.setAge((byte)22);
+        soccerPlayerClass.setTeam("Juventus");
+        System.out.println(soccerPlayerClass.introduceOneself());
     }
 }

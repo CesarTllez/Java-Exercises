@@ -9,6 +9,6 @@ import src.main.java.co.org.mycompany.javaexercises.View.ShowResult;
 public class Main {
     public static void main(String[] args) {
         ShowResult show = new ShowResult();
-        show.showCheckSchedule();
+        show.showIntroduceOneself();
     }
 }
